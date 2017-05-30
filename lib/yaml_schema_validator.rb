@@ -1,11 +1,14 @@
 require 'yaml'
+
+# YAML Schema validator for MML
 class YAMLSchemaValidator
   class << self
     def valid?(schema)
-      !!YAML.load(File.read(schema))
-    rescue Exception => e
+      YAML.safe_load(File.read(schema))
+      true
+    rescue JSON::ParseError => e
       STDERR.puts e.message
-      return false
+      false
     end
   end
 end

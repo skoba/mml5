@@ -2,6 +2,7 @@ require 'yaml'
 require 'json-schema'
 require 'json'
 
+# JSON instance validator
 class JSONValidator
   MML_SCHEMA = File.join(File.dirname(__FILE__), '../schema/mml_schema.json')
 
@@ -10,10 +11,10 @@ class JSONValidator
   end
 
   def valid?(instance)
-    !!JSON::Validator.validate(@schema, instance)
-  rescue Exception => e
+    JSON::Validator.validate!(@schema, instance)
+    true
+  rescue JSON::Schema::ValidationError => e
     puts e.message
     false
   end
 end
-
