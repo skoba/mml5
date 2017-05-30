@@ -10,9 +10,12 @@ JSON_SCHEMA = File.join(SCHEMA_LOCATION, 'mml_schema.json')
 INVALID_JSON_SCHEMA = File.join(SCHEMA_LOCATION, 'invalid_schema.json')
 SAMPLE_LOCATION = File.join(ROOT_PATH, 'samples')
 JSON_INSTANCE = File.join(SAMPLE_LOCATION, 'mml_sample.json')
+XML_INSTANCE = File.join(SAMPLE_LOCATION, 'mml_sample.xml')
 INVALID_JSON = File.join(SAMPLE_LOCATION, 'invalid_sample.json')
+INVALID_XML = File.join(SAMPLE_LOCATION, 'invalid_sample.xml')
 
 require 'xml_schema_validator'
 require 'json_schema_validator'
 require 'yaml_schema_validator'
 require 'json_validator'
+require 'xml_validator'
