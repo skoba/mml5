@@ -1,0 +1,61 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "title": "Container",
+    "description": "Container class of all items for MML",
+    "type": "object",
+    "properties": {
+	"doc_id": {
+	    "description": "document identifier, usually uuid",
+	    "type": "string"
+	},
+	"concept_id": {
+	    "description": "Concept identifier for each instances.",
+	    "type": "string"
+	},
+	"created": {
+	    "description": "The time when the instance created at.",
+	    "type": "string",
+	    "format": "date-time"
+	},
+	"security": {
+	    "type": "object",
+	    "properties": {
+		"access_rights": {
+		    "type": "array",
+		    "items": {
+			"type": "object",
+			"properties": {
+			    "allow": {
+				"type": "string"
+			    },
+			    "disallow": {
+				"type": "string"
+			    }
+			}
+		    }
+		},
+		"use": {
+		    "type": "string"
+		}
+	    }
+	},
+	"context": {
+	    "type": "object",
+	    "properties": {
+		"publisher": "string"
+	    }
+	},
+	"content": {
+	    "type": "array",
+	    "items": {
+		"type": "object",
+		"properties": {
+		    "concept_id": {
+			"type": "string"
+		    }
+		}
+	    }
+	}
+    },
+    "required": ["doc_id", "concept_id", "created", "context", "content"]
+}

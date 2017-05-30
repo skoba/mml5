@@ -1,0 +1,18 @@
+{
+    "doc_id": "0123-4567-801",
+    "concept_id": "MML Sample",
+    "created": "2017-05-28T15:00:00+09:00",
+    "security": {
+	"access_rights": [
+	    { "disallow": "Kamogawa University"},
+	    { "allow": "all" }
+	],
+	"use": "ANY"
+    },
+    "context": {
+	"pulisher": "EHR Lab"
+    },
+    "content": [
+	{ "concept_id": "MML Progress Course" }
+    ]
+}

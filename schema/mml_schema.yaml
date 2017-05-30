@@ -1,0 +1,15 @@
+---
+$schema: "http://json-schema.org/draft-04/schema#"
+title: "MML schema"
+description: "The original definition of MML schema. All the other schema for other text will be generated from this."
+required:
+  - "container"
+properties:
+  container:
+    type: "object"
+    required:
+      - "concept_id"
+    properties:
+      concept_id:
+        type: "string"
+additionalProperties: false

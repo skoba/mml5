@@ -1,0 +1,27 @@
+<?xml version="1.1" encoding="utf-8"?>
+<container>
+  <type>MML</type>
+  <name>Lifestyle</name>
+  <language>Japanese</language>
+  <state>Draft</state>
+  <context>
+    <publisher>
+      <facility>
+	<name>Kyoto University</name>
+	<identifiers>
+	  <identifier>
+	    <identifier>
+	      <value>1234-5678-9ABCD</value>
+	      <issuer>JMNA</issuer>
+	    </identifier>
+	  </identifier>
+	</identifiers>
+      </facility>
+    </publisher>
+  </context>
+  <contents>
+    <entry>
+      <name>smoking</name>
+    </entry>
+  </contents>
+</container>

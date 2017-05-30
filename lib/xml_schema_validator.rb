@@ -1,4 +1,4 @@
-class MMLSchemaValidator
+class XMLSchemaValidator
   def initialize(schema)
     @schema = schema
   end
