@@ -6,7 +6,7 @@ class YAMLSchemaValidator
     def valid?(schema)
       YAML.safe_load(File.read(schema))
       true
-    rescue JSON::ParseError => e
+    rescue Psych::SyntaxError => e
       STDERR.puts e.message
       false
     end

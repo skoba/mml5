@@ -2,4 +2,12 @@
 <Container>
   <doc_id>0123-4567-801</doc_id>
   <concept_id>MML sample</concept_id>
+  <created>2017-05-31T10:40:12+09:00</created>
+  <security>
+    <access_rights>
+      <permission disallow="true">Kamogawa University</permission>
+      <permission allow="false">ALL</permission>
+    </access_rights>
+    <use>ANY</use>
+  </security>
 </Container>

@@ -7,7 +7,34 @@
       <xs:sequence>
 	<xs:element name="doc_id" type="xs:string" minOccurs="1" maxOccurs="1"/>
 	<xs:element name="concept_id" type="xs:string" minOccurs="1" maxOccurs="1"/>
+	<xs:element name="created" type="xs:dateTime" minOccurs="1" maxOccurs="1"/>
+	<xs:element ref="security" minOccurs="1" maxOccurs="1"/>
       </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="security">
+    <xs:complexType>
+      <xs:sequence>
+	<xs:element ref="access_rights" minOccurs="1" maxOccurs="1"/>
+	<xs:element name="use" type="xs:string" minOccurs="0" maxOccurs="1"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="access_rights">
+    <xs:complexType>
+      <xs:sequence>
+	<xs:element ref="permission" minOccurs="1" maxOccurs="unbounded"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="permission">
+    <xs:complexType>
+      <xs:simpleContent>
+	<xs:extension base="xs:string">
+	  <xs:attribute name="allow" type="xs:boolean" use="optional"/>
+	  <xs:attribute name="disallow" type="xs:boolean" use="optional"/>
+	</xs:extension>
+      </xs:simpleContent>
     </xs:complexType>
   </xs:element>
 </xs:schema>

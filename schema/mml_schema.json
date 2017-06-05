@@ -52,6 +52,20 @@
 		"properties": {
 		    "concept_id": {
 			"type": "string"
+		    },
+		    "nodes": {
+			"type": "array",
+			"items": {
+			    "type": "object",
+			    "properties": {
+				"name": {
+				    "type": "string"
+				},
+				"value": {
+				    "type": "string"
+				}
+			    }
+			}
 		    }
 		}
 	    }

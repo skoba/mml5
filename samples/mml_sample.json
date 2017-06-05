@@ -13,6 +13,17 @@
 	"pulisher": "EHR Lab"
     },
     "content": [
-	{ "concept_id": "MML Progress Course" }
+	{
+	    "concept_id": "MML Progress Course",
+	    "nodes" : [
+		{
+		    "name": "freeNotes",
+		    "value": "先月は受診翌日に再発熱。
+          病院2でレントゲンを撮り肺炎と診断された。
+          同時に貧血ありとされてフェジン注計８回施行予定。
+          治癒後の喘息悪化無し。"
+		}
+	    ]
+	}
     ]
 }
