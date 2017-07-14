@@ -10,7 +10,10 @@
 	"use": "ANY"
     },
     "context": {
-	"pulisher": "EHR Lab"
+	"pulisher": {
+	    "identifier": '3000-33bb-aacd',
+	    "name": "EHR Lab"
+	}
     },
     "content": [
 	{

@@ -5,9 +5,39 @@
   <created>2017-05-31T10:40:12+09:00</created>
   <security>
     <access_rights>
-      <permission disallow="true">Kamogawa University</permission>
-      <permission allow="false">ALL</permission>
+      <allow>Kamogawa University</allow>
+      <disallow>ALL</disallow>
     </access_rights>
     <use>ANY</use>
   </security>
+  <context>
+    <publisher>
+      <Organization>
+	<identifier>
+	  <issuer>facility</issuer>
+	  <system>JPN999999</system>	  
+	</identifier>
+      </Organization>
+    </publisher>
+  </context>
+  <content>
+    <Entry>
+      <concept_id>MML Progress Course</concept_id>
+      <nodes>
+	<Element>
+	  <name>freeNotes</name>
+	  <item>
+	    <DvString>
+	      <value>
+		先月は受診翌日に再発熱。
+          病院2でレントゲンを撮り肺炎と診断された。
+          同時に貧血ありとされてフェジン注計８回施行予定。
+          治癒後の喘息悪化無し。
+	      </value>
+	    </DvString>
+	  </item>
+	</Element>
+      </nodes>
+    </Entry>
+  </content>
 </Container>

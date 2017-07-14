@@ -51,12 +51,32 @@ module MML
     end
   end
 
-  # Element class to make hierachy, a leaf of composition
-  class Element
-    attr_accessor :node
+  # Data ndoe class
+  class Node
+    attr_accessor :name
 
-    def initialize(node:)
-      @node = node
+    def initialize(name:)
+      @name = name
+    end
+  end
+
+  # Element class to make hierachy, a leaf of composition
+  class Element < Node
+    attr_accessor :item
+
+    def initialize(name:, item:)
+      super(name: name)
+      @item = item
+    end
+  end
+
+  # Cluster is a bundle of data nodes
+  class Cluster < Node
+    attr_accessor :nodes
+
+    def initialize(name:, nodes:)
+      super(name: name)
+      @nodes = nodes
     end
   end
 end

@@ -1,6 +1,6 @@
 {
     "$schema": "http://json-schema.org/draft-04/schema#",
-    "title": "Container",
+    "title": "MML Container",
     "description": "Container class of all items for MML",
     "type": "object",
     "properties": {
@@ -42,7 +42,17 @@
 	"context": {
 	    "type": "object",
 	    "properties": {
-		"publisher": "string"
+		"publisher": {
+		    "type": "object",
+		    "properties": {
+			"identifier": {
+			    "type": "string"
+			},
+			"name": {
+			    "type": "string"
+			}
+		    }
+		}
 	    }
 	},
 	"content": {

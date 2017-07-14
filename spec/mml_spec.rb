@@ -53,11 +53,21 @@ describe MML::DvQuantity do
   end
 end
 
-describe MML::Element do
-  let(:node) { MML::DvString.new(value: 'Test') }
-  let(:element) { MML::Element.new(node: node) }
+describe MML::Node do
+  let(:item) { MML::DvString.new(value: 'Test') }
+  let(:element) { MML::Element.new(name: 'test node', item: item) }
 
-  example 'Element has one data value' do
-    expect(element.node.value).to eq 'Test'
+  describe MML::Element do
+    example 'Element has one data value' do
+      expect(element.item.value).to eq 'Test'
+    end
+  end
+
+  describe MML::Cluster do
+    let(:cluster) { MML::Cluster.new(name: 'test cluster', nodes: [element]) }
+
+    example 'Cluster has many items' do
+      expect(cluster.nodes).not_to be_empty
+    end
   end
 end

@@ -9,6 +9,8 @@
 	<xs:element name="concept_id" type="xs:string" minOccurs="1" maxOccurs="1"/>
 	<xs:element name="created" type="xs:dateTime" minOccurs="1" maxOccurs="1"/>
 	<xs:element ref="security" minOccurs="1" maxOccurs="1"/>
+	<xs:element ref="context" minOccurs="1" maxOccurs="1"/>
+	<xs:element ref="content" minOccurs="1" maxOccurs="1"/>
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -20,6 +22,7 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+
   <xs:element name="access_rights">
     <xs:complexType>
       <xs:sequence>
@@ -27,14 +30,93 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="permission">
+
+  <xs:element name="permission" abstract="true"/>
+  <xs:element name="allow" type="xs:string" substitutionGroup="permission"/>
+  <xs:element name="disallow" type="xs:string" substitutionGroup="permission"/>
+  
+  <xs:element name="context">
     <xs:complexType>
-      <xs:simpleContent>
-	<xs:extension base="xs:string">
-	  <xs:attribute name="allow" type="xs:boolean" use="optional"/>
-	  <xs:attribute name="disallow" type="xs:boolean" use="optional"/>
-	</xs:extension>
-      </xs:simpleContent>
+      <xs:sequence>
+	<xs:element ref="publisher" minOccurs="1" maxOccurs="1"/>
+      </xs:sequence>
     </xs:complexType>
   </xs:element>
+
+  <xs:element name="publisher">
+    <xs:complexType>
+      <xs:sequence>
+	<xs:element ref="Party" minOccurs="1" maxOccurs="unbounded"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="Party" abstract="true" />
+  <xs:element name="Organization" substitutionGroup="Party"/>
+  <xs:element name="Person" substitutionGroup="Party"/>
+  
+  <xs:element name="content">
+    <xs:complexType>
+      <xs:sequence>
+	<xs:element ref="Entry" minOccurs="0" maxOccurs="unbounded"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Entry">
+    <xs:complexType>
+      <xs:sequence>
+	<xs:element name="concept_id" type="xs:string" minOccurs="1" maxOccurs="1"/>
+	<xs:element ref="nodes" minOccurs="1" maxOccurs="1"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="nodes">
+    <xs:complexType>
+      <xs:sequence>
+	<xs:element ref="Element" minOccurs="0" maxOccurs="unbounded"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Element">
+    <xs:complexType>
+      <xs:sequence>
+	<xs:element name="name" type="xs:string" minOccurs="1" maxOccurs="1"/>
+	<xs:element ref="item" minOccurs="1" maxOccurs="1"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="item">
+    <xs:complexType>
+      <xs:sequence>
+	<xs:element ref="DataValue" minOccurs="0" maxOccurs="unbounded"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="DataValue" type="DataValueType" abstract="true"/>
+  <xs:element name="DvString" type="DvStringType" substitutionGroup="DataValue"/>
+  <xs:element name="DvQuantity" type="DvQuantityType" substitutionGroup="DataValue"/>
+
+  <xs:complexType name="DataValueType" abstract="true">
+    <xs:sequence>
+      <xs:element name="value" minOccurs="1" maxOccurs="1"/>
+    </xs:sequence>
+  </xs:complexType>    
+
+  <xs:complexType name="DvStringType">
+    <xs:complexContent>
+      <xs:extension base="DataValueType"/>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="DvQuantityType">
+    <xs:complexContent>
+      <xs:extension base="DataValueType">
+	<xs:sequence>
+	  <xs:element name="magnitude" type="xs:decimal"/>
+	  <xs:element name="unit" type="xs:string"/>
+	</xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
 </xs:schema>
