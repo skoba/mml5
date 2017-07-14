@@ -10,15 +10,15 @@
 	"use": "ANY"
     },
     "context": {
-	"pulisher": {
-	    "identifier": '3000-33bb-aacd',
+	"publisher": {
+            "identifier": "3000-33bb-aacd",
 	    "name": "EHR Lab"
 	}
     },
     "content": [
 	{
 	    "concept_id": "MML Progress Course",
-	    "nodes" : [
+	    "nodes": [
 		{
 		    "name": "freeNotes",
 		    "value": "先月は受診翌日に再発熱。
