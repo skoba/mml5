@@ -9,7 +9,9 @@ class JSONSchemaValidator
   def valid?
     JSON::Validator.fully_validate_schema @schema
     return true
-  rescue
+  rescue JSON::Schema::ValidationError
+    return false
+  rescue JSON::Schema::UriError
     return false
   end
 end

@@ -14,9 +14,11 @@
     <publisher>
       <Organization>
 	<identifier>
-	  <issuer>facility</issuer>
-	  <system>JPN999999</system>	  
+	  <issuer>Japan Medical Network</issuer>
+	  <system>JPN999999</system>
 	</identifier>
+	<name>EHR Lab</name>
+	<type></type>
       </Organization>
     </publisher>
   </context>

@@ -1,20 +1,20 @@
-= MML Version 5
+# MML(Medical Markup Language) Version 5
 
-== はじめに
+## はじめに
 MML(Medical Markup Language)は医療情報交換のための標準規格として、1995年より開発が開始され1997年にVersion1.0が公開された。以後、日本での医療情報交換規約として開発が続けられた。
 
 2015年に公開されたMML version 4規格（以下MML4)では、それまでの構造を継承しつつXML Schemaの採用などの更新が行われ、新規モジュールも追加された。しかしながら、より柔軟で多様な用途に答えていくには、設計を基本的に帰る必要があった。
 
 そこで、MML version 5(MML5)はMML4までの構造を概念モデルとして一部継承しつつも、ベースの再設計を行うこととして新規に開発することとした。
 
-== License
+## License
 この文書の使用条件はCC0に準拠する。商用非商用にかかわらず複製、改変、翻案、配布することが可能である。詳細については下記のコモンズ証を参照すること。
 
 https://creativecommons.org/publicdomain/zero/1.0/deed.ja
 
 MML ver 4までの実装報告義務は廃止された。
 
-== 開発への参加について
+## 開発への参加について
 開発はGitHub上で行っている。開発への貢献は以下の手順で行われることが望ましい。
 
 . Fork it ( http://github.com/skoba/mml5 )
@@ -22,18 +22,4 @@ MML ver 4までの実装報告義務は廃止された。
 . Commit your changes (git commit -am 'Add some feature')
 . Push to the branch (git push origin my-new-feature)
 . Create new Pull Request
-
-== MML5の開発方針
-
-MML5ではopenEHR, ISO13606の特徴の一つである2段階モデ
-ルを採用する。MML4までは、共通形式、コンテンツモジュールごとに
-namespaceが区切られて、固有のタグが定義されていた。モジュールごとに異
-なるスキーマを切り替えることができるシンプルさはメリットではあるが、ス
-キーマの変更や追加に関するコストが負担となっていた。
-
-そこで、2段階モデルを取り入れることで基本的な構造は保ったまま、複数の
-概念モデルを表現することとした。構造はISO 13606のサブセットとし、表現
-形式としてMML4までのXMLに加えて、JSONを採用することとした。それぞれに
-スキーマを提示し、MML4と同様のモジュール構造を再現するテンプレートを提
-供することとした。
 
