@@ -18,28 +18,51 @@
 	  <system>JPN999999</system>
 	</identifier>
 	<name>EHR Lab</name>
-	<type></type>
+	<type>Department</type>
       </Organization>
     </publisher>
   </context>
   <content>
-    <Entry>
-      <concept_id>MML Progress Course</concept_id>
-      <nodes>
-	<Element>
-	  <name>freeNotes</name>
-	  <item>
-	    <DvString>
-	      <value>
-		先月は受診翌日に再発熱。
-          病院2でレントゲンを撮り肺炎と診断された。
-          同時に貧血ありとされてフェジン注計８回施行予定。
-          治癒後の喘息悪化無し。
-	      </value>
-	    </DvString>
-	  </item>
-	</Element>
-      </nodes>
-    </Entry>
+    <Section>
+      <name>subjective</name>
+      <Entry>
+	<concept_id>MML Progress Course</concept_id>
+	<nodes>
+	  <Element>
+	    <name>freeNotes</name>
+	    <item>
+	      <DvString>
+		<value>
+		  先月は受診翌日に再発熱。
+		  病院2でレントゲンを撮り肺炎と診断された。
+		  同時に貧血ありとされてフェジン注計８回施行予定。
+		  治癒後の喘息悪化無し。
+		</value>
+	      </DvString>
+	    </item>
+	  </Element>
+	</nodes>
+      </Entry>
+    </Section>
+    <Section>
+      <name>objective</name>
+      <Entry>
+	<concept_id>Objective Notes</concept_id>
+	<nodes>
+	  <Element>
+	    <name>freeNotes</name>
+	    <item>
+	      <DvString>
+		<value>
+		  検尿　糖(-)蛋白(1)潜血(2)
+            心音呼吸音正常（usually piping rales)
+            118/86
+		</value>
+	      </DvString>
+	    </item>
+	  </Element>
+	</nodes>
+      </Entry>
+    </Section>
   </content>
 </Container>

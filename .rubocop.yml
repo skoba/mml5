@@ -1,0 +1,3 @@
+AllCops:
+  CacheRootDirectory: /tmp/cache
+

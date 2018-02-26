@@ -59,10 +59,29 @@
   <xs:element name="content">
     <xs:complexType>
       <xs:sequence>
+	<xs:element ref="Section" minOccurs="0" maxOccurs="unbounded"/>
 	<xs:element ref="Entry" minOccurs="0" maxOccurs="unbounded"/>
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+
+  <xs:complexType name="ContentItem" abstract="true">
+    <xs:all>
+      <xs:element name="name"/>
+      <xs:element ref="Section" minOccurs="0" />
+      <xs:element ref="Entry" minOccurs="0" />
+    </xs:all>
+  </xs:complexType>
+
+  <xs:element name="Section">
+    <xs:complexType>
+      <xs:complexContent>
+	<xs:extension base="ContentItem"/>
+      </xs:complexContent>
+    </xs:complexType>
+  </xs:element>
+
+
   <xs:element name="Entry">
     <xs:complexType>
       <xs:sequence>
@@ -71,6 +90,7 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+
   <xs:element name="nodes">
     <xs:complexType>
       <xs:sequence>
@@ -78,6 +98,7 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+
   <xs:element name="Element">
     <xs:complexType>
       <xs:sequence>
@@ -86,6 +107,7 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+
   <xs:element name="item">
     <xs:complexType>
       <xs:sequence>

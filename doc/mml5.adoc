@@ -37,3 +37,16 @@ namespaceが区切られて、固有のタグが定義されていた。モジ�
 スキーマを提示し、MML4と同様のモジュール構造を再現するテンプレートを提
 供することとした。
 
+== MML5のクラス構成
+
+MML5のクラス図を下記に示す。MML5の参照モデルの構成はISO13606の参照モデルのサブセットである。
+[plantuml]
+--
+class Container
+class Entry
+class Cluster
+class Element
+
+Container *-- Entry
+Entry *-- Cluster
+Cluster *-- Element
